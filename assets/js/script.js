@@ -26,7 +26,7 @@ const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalYear = document.querySelector("[data-modal-container] time");
 const modalText = document.querySelector("[data-modal-text]");
-const modalLink = document.querySelector("[data-modal-container] a");
+const modalLink = document.querySelector("[data-modal-container] a.modal-link");
 
 // modal toggle function
 const testimonialsModalFunc = function () {
