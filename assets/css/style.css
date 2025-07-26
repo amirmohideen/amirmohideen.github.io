@@ -1786,7 +1786,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .project-list { grid-template-columns: repeat(3, 1fr); }
 
   .trailer-section {
-    margin: 3rem 0;
+    margin: 30px 0 ;
   }
 
 
