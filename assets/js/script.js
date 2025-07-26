@@ -166,23 +166,54 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 // page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
+// const navigationLinks = document.querySelectorAll("[data-nav-link]");
+// const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+// // add event to all nav link
+// for (let i = 0; i < navigationLinks.length; i++) {
+//   navigationLinks[i].addEventListener("click", function () {
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
+//     for (let i = 0; i < pages.length; i++) {
+//       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+//         pages[i].classList.add("active");
+//         navigationLinks[i].classList.add("active");
+//         window.scrollTo(0, 0);
+//       } else {
+//         pages[i].classList.remove("active");
+//         navigationLinks[i].classList.remove("active");
+//       }
+//     }
+
+//   });
+// }
+
+// Set navbar border radius to 0 when the page is scrolled more than 70px
+  const navbar = document.querySelector('.navbar');
+
+  const tabletBreakpoint = window.matchMedia('(max-width: 1280px) and (min-width: 768px)'); // Example breakpoint for tablet
+  const laptopBreakpoint = window.matchMedia('(min-width: 1280px)'); // Example breakpoint for laptop
+
+  let borderSwitchPoint;
+  
+  const calculateBorderSwitchPoint = () => {
+    if (tabletBreakpoint.matches) {
+      return 275; // Set to 275px for tablet
+    } else if (laptopBreakpoint.matches) {
+      return 70; // Set to 70px for laptop
     }
-
+    return undefined; // Default case
+  };
+  borderSwitchPoint = calculateBorderSwitchPoint();
+  window.addEventListener('resize', () => {
+    borderSwitchPoint = calculateBorderSwitchPoint();
   });
-}
+
+  if (borderSwitchPoint !== undefined) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > borderSwitchPoint) {
+        navbar.classList.add('no-border-radius');
+      } else {
+        navbar.classList.remove('no-border-radius');
+      }
+    });
+  }

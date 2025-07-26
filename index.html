@@ -185,11 +185,21 @@
 
     <div class="main-content">
 
+      
+      
+      
+      
+      
       <!--
-        - #NAVBAR
+        - #ABOUT (Now Portfolio)
       -->
-
-      <nav class="navbar">
+      
+      <article class="portfolio  active" data-page="portfolio">
+        
+        <!--
+          - #NAVBAR
+        -->
+        <nav class="navbar">
 
         <ul class="navbar-list">
 
@@ -198,11 +208,15 @@
           </li> -->
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link>
+              <a href="/">Portfolio</a>
+            </button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link>
+              <a href="#resume">Resume</a>
+            </button>
           </li>
 
           <!-- 
@@ -219,20 +233,10 @@
 
       </nav>
 
-
-
-
-
-      <!--
-        - #ABOUT (Now Portfolio)
-      -->
-
-      <article class="portfolio  active" data-page="portfolio">
-
         <!--
           - Trailer Section
         -->
-        <section class="trailer-section" style="margin: 3rem 0; text-align: center;">
+        <section class="trailer-section">
           <!-- <h2 class="h2 article-title">Trailer</h2> -->
           <div class="trailer-video-container">
             <iframe class="trailer-video" src="https://www.youtube.com/embed/V-lOf6gxS5U" title="YouTube video player"
@@ -624,7 +628,7 @@
           - Resume timeline
         -->
 
-        <header>
+        <header id="resume">
           <h2 class="h2 article-title">Resume</h2>
         </header>
 

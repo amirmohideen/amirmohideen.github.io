@@ -125,7 +125,7 @@
   box-sizing: border-box;
 }
 
-a { text-decoration: none; }
+a { text-decoration: none; color: unset }
 
 li { list-style: none; }
 
@@ -153,10 +153,9 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
-html { font-family: var(--ff-poppins); }
+html { font-family: var(--ff-poppins); scroll-behavior: smooth; }
 
 body { background: var(--smoky-black); }
-
 
 
 
@@ -321,12 +320,12 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
+  max-height: 175px;
   overflow: hidden;
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active { max-height: 460px; }
 
 .sidebar-info {
   position: relative;
@@ -334,6 +333,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .avatar-box {
@@ -1244,6 +1244,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   height: 100%;
 }
 
+.trailer-section {
+  margin: 0rem 0 1rem;
+  text-align: center;
+}
+
 
 
 /*-----------------------------------*\
@@ -1350,7 +1355,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    max-height: 180px;
+    max-height: 255px;
     margin-bottom: 30px;
   }
 
@@ -1582,9 +1587,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
+
   /**
    * SIDEBAR
    */
+
+  .sidebar {
+    max-height: 180px;
+  }
 
   .contacts-list {
     grid-template-columns: 1fr 1fr;
@@ -1715,20 +1725,28 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-  /**
+/**
    * NAVBAR
    */
 
   .navbar {
-    position: absolute;
-    bottom: auto;
-    top: 0;
-    left: auto;
+    position: sticky;
+    top: 0px;
+    left: 100%;
     right: 0;
-    width: max-content;
-    border-radius: 0 20px;
+    width: calc(100% + 60px);
+    border-radius: 20px 20px 0 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     padding: 0 20px;
     box-shadow: none;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+
+  .no-border-radius {
+    border-radius: 0 !important;
   }
 
   .navbar-list {
@@ -1767,6 +1785,18 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .project-list { grid-template-columns: repeat(3, 1fr); }
 
+  .trailer-section {
+    margin: 3rem 0;
+  }
+
+
+  /**
+    * RESUME
+    */
+  
+  #resume {
+    scroll-margin-top: 70px;
+  }
 
 
   /**
@@ -1838,15 +1868,13 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin: 0;
   }
 
-
-
   /**
    * SIDEBAR
    */
 
   .sidebar {
     position: sticky;
-    top: 60px;
+    top: 20px;
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;
