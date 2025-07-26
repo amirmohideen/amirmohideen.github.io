@@ -834,6 +834,30 @@ main {
   line-height: 1.6;
 }
 
+/**
+ * bullet color 
+ */
+
+.timeline-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.timeline-text li {
+  position: relative;
+  padding-left: 1em;
+  margin-bottom: 0em;
+}
+
+.timeline-text li::before {
+  content: "\2022";  /* Unicode for bullet point */
+  color: gold;       /* Change bullet color to gold */
+  font-weight: bold; /* If you want a bolder bullet */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 
 /**
  * skills 
